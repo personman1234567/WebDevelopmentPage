@@ -1,0 +1,131 @@
+#navBar{
+    background-color: #484848;
+    top: 0;
+    border-radius: 8px;
+    color: whitesmoke;
+    padding: 15px;
+}
+
+.navName{
+    margin: 10px;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+    text-decoration: none;
+    border-right: 2px solid black;
+    padding-right: 15px;
+}
+
+#TigerImg{
+    width: 150px;
+    float: left;
+    margin-left: 60px;
+}
+
+.text{
+    text-align: end;
+}
+
+.TeacherNames{
+    text-align: center;
+}
+
+.CompSci{
+    background-color: #514444;
+    color: whitesmoke;
+}
+
+.MATH{
+    color: whitesmoke;
+    background-color: #7b6262;
+}
+
+.ENGLISH{
+    color: whitesmoke;
+    background-color: #9b7373;
+}
+
+.WebsiteText{
+    background-color: #686868;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.professorPics{
+    width: 150px;
+}
+
+.spacing{
+    height: 30px;
+}
+
+#MainWrapper{
+    border: 8px solid #343434;
+    box-shadow: 0 0 75px #686868;
+    width: 50%;
+    min-width: 623px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    background-color: #686868;
+}
+
+#MyTable{
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    box-shadow: 0 0 75px #686868;
+}
+
+#LeftColumn{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 30%;
+/*    border-right: 4px solid #343434;*/
+    float: left;
+}
+#MiddleColumn{
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+#RightColumn{
+    width: 40%;
+    float: left;
+    text-align: center;
+}
+
+#Ethanpicture{
+    border: 2px solid #343434;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#cssCardName{
+    margin-left: 10%;
+    margin-top: 10%;
+    border-bottom: 2px solid whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+}
+
+#ContactHeader{
+    margin-top: 8%;
+    margin-left: 10%; 
+    margin-right: 10%;
+    border-bottom: 2px solid whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+}
+
+.Clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#currentTab{
+    text-decoration: underline;
+}

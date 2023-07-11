@@ -1,0 +1,273 @@
+<!--
+    Name: Ethan Duke
+    Pawprint: esdnk7
+    Date: 9-30-20
+    Challenge: To-Do List F20
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="To-Do-List-CSS.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+        
+        <title>To Do List!</title>
+        
+        <script>
+            
+            function AddToList(){
+                
+                var title = document.getElementById("formTitle");
+                var select = document.getElementById("selection");
+                var slider = document.getElementById("sliderBar");
+                var date = document.getElementById("date");
+                
+                if(title.value == "" || select.value == "selectType" || slider.value == "" || date.value == ""){
+                    window.alert("Please fill out ALL fields!");
+                }
+                else{
+                    var i = new Date();
+                    var RowCount = document.getElementById("myTable").rows.length;
+                    var table = document.getElementById("myTable");
+                    var row = table.insertRow(RowCount);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    
+                    if(date.valueAsNumber <= i){
+                        window.alert("Please enter a date that hasn't occured already!")
+                    }
+                    else{
+                    
+                    cell1.innerHTML = formTitle.value;
+                    cell1.className = "center";
+
+                    cell2.innerHTML = selection.value;
+                    cell2.className = "center";
+
+                    if(slider.value == 0)
+                        {
+                            cell3.innerHTML = '<span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>';
+                        }    
+                    if(slider.value == 1)
+                        {
+                            cell3.innerHTML = '<span class="filledDot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>';
+                        }
+                    if(slider.value == 2)
+                        {
+                            cell3.innerHTML = '<span class="filledDot"></span> <span class="filledDot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>';
+                        }
+                    if(slider.value == 3)
+                        {
+                            cell3.innerHTML = '<span class="filledDot"></span> <span class="filledDot"></span> <span class="filledDot"></span> <span class="dot"></span> <span class="dot"></span>';
+                        }
+                    if(slider.value == 4)
+                        {
+                            cell3.innerHTML = '<span class="filledDot"></span> <span class="filledDot"></span> <span class="filledDot"></span> <span class="filledDot"></span> <span class="dot"></span>';
+                        }
+                    if(slider.value == 5)
+                        {
+                            cell3.innerHTML = '<span class="filledDot"></span> <span class="filledDot"></span> <span class="filledDot"></span> <span class="filledDot"></span> <span class="filledDot"></span>';
+                        }
+//                    cell3.innerHTML = sliderBar.value;
+                    cell3.className = "center";
+
+                    cell4.innerHTML = date.value;
+                    cell4.className = "center";
+                        
+                    cell5.innerHTML = '<span class="ActionButton" onclick = "deleteRow()"><h5>Done</h5></span>';
+                    cell5.className = "center";
+                    }
+                }
+                               
+            }
+            
+            function ClearList(){
+                var RowCount = document.getElementById("myTable").rows.length;
+                
+                if(RowCount > 1){
+                    while(RowCount > 1){
+                        document.getElementById("myTable").deleteRow(1);
+                        var RowCount = document.getElementById("myTable").rows.length;
+                }
+                }
+            }
+            
+            function updatePriority(value){
+                document.getElementById("priorityNum").value=value;
+            }
+            
+            function toggleTheme(){      
+                
+                var background = document.body;
+                var form = document.getElementById("inputSection");
+                var display = document.getElementById("displaySection");
+                var text = document.getElementById("titleText");
+                var button1 = document.getElementById("addButton");
+                var button2 = document.getElementById("clearButton");
+                var projectsButton = document.getElementById("projectsLinkBox");
+                var projectsLink = document.getElementById("projectsLink");
+                var themeButton = document.getElementById("toggleButton");
+                var dots = document.getElementsByClassName("dot");
+                var dots2 = document.getElementById("filledDot");
+                
+                console.dir(button1);
+                
+                if(background.style.backgroundColor === ""){
+                    
+                    background.style.backgroundColor = "dimgray";
+                    document.getElementById("toggleButton").innerHTML = "Dark Theme";
+                    form.style.backgroundColor = "#484848";
+                    display.style.backgroundColor = "#939393";
+                    text.style.color = "whitesmoke";
+                    button1.style.backgroundColor = "#666666";
+                    button2.style.backgroundColor = "#666666";
+                    projectsButton.style.backgroundColor = "#484848";
+                    projectsLink.style.color = "whitesmoke";
+                    themeButton.style.backgroundColor = "#484848";
+                    themeButton.style.color = "whitesmoke";
+                }
+                if(background.style.backgroundColor === "rgb(183, 183, 183)")
+                    {
+                        background.style.backgroundColor = "dimgray";
+                        document.getElementById("toggleButton").innerHTML = "Dark Theme";
+                        form.style.backgroundColor = "#484848";
+                        display.style.backgroundColor = "#939393";
+                        text.style.color = "whitesmoke";
+                        button1.style.backgroundColor = "#666666";
+                        button2.style.backgroundColor = "#666666";
+                        projectsButton.style.backgroundColor = "#484848";
+                        projectsLink.style.color = "whitesmoke";
+                        themeButton.style.backgroundColor = "#484848";
+                        themeButton.style.color = "whitesmoke";
+                    }
+                else{
+                    background.style.backgroundColor = "#b7b7b7";
+                    document.getElementById("toggleButton").innerHTML = "Light Theme";
+                    form.style.backgroundColor = "#989898";
+                    display.style.backgroundColor = "#d1d1d1";
+                    text.style.color = "dimgray";
+                    button1.style.backgroundColor = "#d2d2d2";
+                    button2.style.backgroundColor = "#d2d2d2";
+                    projectsButton.style.backgroundColor = "#d2d2d2";
+                    projectsLink.style.color = "dimgray";
+                    themeButton.style.backgroundColor = "#d2d2d2";
+                    themeButton.style.color = "dimgray";
+                } 
+            }
+            
+            function editTitle(){
+                var New = prompt("Please enter name of your To-Do-List","");
+                var Title = document.getElementById("titleText");
+                var valid = 0;
+                
+                while(valid == 0)
+                    {
+                        if(New === "")
+                            {
+                                New = prompt("Please Enter a Valid Title!");
+                            }
+                        else{
+                            Title.innerHTML = New;
+                            valid++;
+                        }
+                    } 
+            }
+            
+            function deleteRow(index){
+                document.getElementById("myTable").deleteRow(1);
+            }
+            
+        </script>
+    
+    </head>
+    
+    <body>
+    
+        <div id="topBar">
+            <div id="projectsLinkBox">
+                <a id="projectsLink" href="esdnk7ProjectsF20.html">Back To Projects</a>
+            </div>
+
+            <div id="Toggle">
+                <button id="toggleButton" onclick="toggleTheme()">Dark Theme</button>
+            </div>
+        </div>
+        
+
+        <h1 id="titleText" ondblclick="editTitle()">To Do List</h1>
+        
+        <div id="inputSection">Add a To-Do
+            <form action="#" method="POST">
+                
+                <div id="titleColumn">
+                    <input id="formTitle" class="title" type="text" name="Title" placeholder="Title" maxlength="15">
+                    
+                    <button id="addButton" type="button" onclick="AddToList()">Add To List</button>
+                </div>
+                
+                <div id="middleColumn">
+                    
+                    <select id="selection" name="type">
+                        <option value="selectType" selected disabled>Select Type</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Homework">Homework</option>
+                        <option value="Task">Task</option> 
+                        <option value="Event">Event</option> 
+                    </select>
+                    
+<!--The display value part of the code was inspired by code I cound at: https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value-->
+                    <div>
+                        <p id="priority" class="websiteText">Priority</p>
+                        
+                        <input id="sliderBar" type="range" min="0" max="5" step="1" onchange="updatePriority(this.value);" value="0">
+                        
+                        <input type="text" id="priorityNum" value="0">
+                        
+                    </div>
+                    
+                </div>
+                
+                <div id="rightColumn">
+                    <input id="date" type="date" name="Date">
+                    <button id="clearButton" type="button" onclick="ClearList()">Clear List</button>
+                </div>
+                
+                
+            </form>
+        </div>
+        
+        <div id="displaySection">
+            <table id="myTable">
+                <thead class="websiteText" id="tableHead">
+                    <tr>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Priority</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+   
+    </body>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,226 @@
+<!--
+    Name: Ethan Duke
+    Pawprint: esdnk7
+    Date: 9-9-2020
+    Challenge: Multi-Column Layout F20
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+        
+        <title>Ethan's Skills</title>
+    <style>
+        
+        body
+        {
+            background-color: #686868;
+        }
+        
+        .Headers{
+            text-align: center;
+            text-decoration: underline;
+            color: whitesmoke;
+            font-family: monospace;
+        }
+        .text{
+            color: whitesmoke;
+            font-family: monospace;
+        }
+        
+        #LeftColumn{
+            float: left;
+            padding: 18px;
+            width: 247px;
+            margin: 18px;
+            height: 433px;
+            border-top: 7px solid #445555;
+            border-left: 7px solid #445555;
+            border-bottom: 7px solid #444444;
+            border-right: 7px solid #444444;
+            border-radius: 50px;
+            background-color: #514444;
+        }
+        
+        #RightColumn{
+            float: left;
+            padding: 18px;
+            width: 224px;
+            margin: 18px;
+            height: 433px;
+            border-top: 7px solid #445555;
+            border-left: 7px solid #445555;
+            border-bottom: 7px solid #444444;
+            border-right: 7px solid #444444;
+            border-radius: 50px;
+            background-color: #514444;
+        }
+        
+        .Clear:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        
+        #MainWrapper{
+            margin: 30px auto;
+            width: 1128px;
+            border-top: 6px solid #445555;
+            border-left: 6px solid #445555;
+            border-bottom: 6px solid #444444;
+            border-right: 6px solid #444444;
+            border-radius: 75px;
+            padding: 8px;
+            background-color: #555555;
+        }
+        
+        #RowWrapper{
+            float: left;
+            width: 449px;
+            margin: 18px;
+        }
+        
+        #TopRow{
+            width: 375px;
+            height: 198px;
+            padding: 25px;
+            border-top: 7px solid #445555;
+            border-left: 7px solid #445555;
+            border-bottom: 7px solid #444444;
+            border-right: 7px solid #444444;
+            border-radius: 50px;
+            background-color: #514444;
+        }
+        
+        #BottomRow{
+            margin-top: 25px;
+            width: 375px;
+            height: 132px;
+            padding: 25px;
+            border-top: 7px solid #445555;
+            border-left: 7px solid #445555;
+            border-bottom: 7px solid #444444;
+            border-right: 7px solid #444444;
+            border-radius: 50px;
+            background-color: #514444;
+        }
+        
+        #SkillsText{
+            text-align: center;
+            color: whitesmoke
+        }
+        
+        #navBar{
+            background-color: #484848;
+            top: 0;
+            border-radius: 8px;
+            color: whitesmoke;
+            padding: 15px;
+        }
+
+        .navName{
+            margin: 10px;
+            font-size: 30px;
+            font-family: 'Montserrat', sans-serif;
+            color: whitesmoke;
+            text-decoration: none;
+            border-right: 2px solid black;
+            padding-right: 15px;
+        }
+        
+        #currentTab{
+            text-decoration: underline;
+        }
+    
+    </style>
+    </head>
+    <body>
+        
+        <!-- This is for the Navigation bar-->
+        <div id="navBar">
+            <a class="navName" href="esdnk7PortfoliosF20.html">Ethan Duke</a>
+            <a class="navName" id="currentTab" href="Challenge%203%20ColumnsF20.html">Skills</a>
+            <a class="navName" href="esdnk7TablesF20.html">Classes Taken</a>
+            <a class="navName" href="esdnk7ProjectsF20.html">Projects</a>
+        </div>
+        
+        <!-- Main wrapper. This div should wrap all columns, row wrapper, and title header -->
+        <div id="MainWrapper" class="Clear">
+            <h3 id="SkillsText">Skills</h3>
+            <!-- Left Column -->
+            <!-- Put left column physical width calculations here: 
+                
+                    247px -> content width
+                     36px -> padding (18px left, 18px right)
+                     36px -> margin (18px left, 18px right)
+                +    14px -> border (7px left, 7px right)
+                - - - - - - - - - - - - - - - - - - - - - - -
+                    333px is the physical width of the left column
+
+            -->
+            <div id="LeftColumn">
+                <h3 class="Headers">Languages</h3>
+                <ul class="text">
+                    <li>C</li>
+                    <li>Now learning HTML and CSS</li>
+                </ul>
+            </div>
+            
+            <!-- Row Wrapper. This div will contain two rows -->
+            <!--Put middle column physical width calculations here:
+
+                    449px -> content width
+                +    36px -> margin (18px left, 18px right)
+                - - - - - - - - - - - - - - - - - - - - - - -
+                    485px is the physical width of the row wrapper
+
+            -->
+            <div id="RowWrapper">
+                
+                <div id="TopRow">
+                    <h3 class="Headers">Coursework</h3>
+                    <ul class="text">
+                        <li>CS1050</li>
+                        <li>CS2050</li>
+                        <li>CS2270 (some electrical engineering stuff)</li>
+                    </ul>
+                </div>
+                
+                <div id="BottomRow">
+                    <h3 class="Headers">Other</h3>
+                    <ul class="text">
+                        <li>I play guitar</li>
+                        <li>I play piano</li>
+                        <li>I have my Eagle Scout Rank</li>
+                        <li>Played Baseball for 9 years</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- Right Column -->
+            <!--Put right column physical width calculations here: 
+
+                    224px -> content width
+                     36px -> padding (18px left, 18px right)
+                     36px -> margin (18px left, 18px right)
+                     14px -> border (7px left, 7px right)
+                - - - - - - - - - - - - - - - - - - - - - - -
+                    310px is the physical width of the right column
+
+            -->
+            <div id="RightColumn">
+                <h3 class="Headers">Technologies</h3>
+                <ul class="text">
+                        <li>PC computers</li>
+                        <li>Laptops</li>
+                        <li>Phones</li>
+                    </ul>
+            </div>
+        </div>
+        <h4>Last updated at: 10-26-2020</h4>
+    </body>
+</html>
